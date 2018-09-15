@@ -1,0 +1,126 @@
+@font-face {
+    font-family: title-font;
+    src: url("../fonts/EVAA.ttf");
+    /*src: local(Ubuntu);*/
+}
+
+:root {
+    --klavika-font: title-font, Helvetica, sans-serif;
+    --open-sans-font: "open-sans", "Open Sans", sans-serif;
+    --monospace-font: "Fira Mono", monospace;
+    --default-font-size: 16px;
+    --font-weight-reg: 400;
+    --font-weight-bold: 600;
+    --black: #000;
+    --gray-1: #191a1c;
+    --gray-2: #323538;
+    --gray-3: #4c4f54;
+    --gray-4: #656a70;
+    --gray-5: #7f858d;
+    --gray-6: #9a9ea5;
+    --gray-7: #b4b8bc;
+    --gray-8: #d0d2d5;
+    --gray-9: #ebecee;
+    --gray-10: #f3f4f6;
+    --white: #fff;
+    --input-background-light: #fff;
+    --input-background-dark: #1b212d;
+    --input-border-light: #b4b8bc;
+    --input-border-dark: #262e42;
+    --input-placeholder-color: #656a70;
+    --site-max-width: 1288px;
+    --column: 5.46875%;
+    --gutter: 3.125%;
+    --full-column: 8.59375%;
+    --default-blue: #1563ff;
+    --nomad-green: #00bc7f;
+    --terraform-purple: #5e3aed;
+    --consul-pink: #c62a71;
+    --vault-gray: #7c8797;
+    --packer-blue: #00acff;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.80);
+    padding: 0;
+    margin: 0;
+    border-bottom: white 0.02rem solid;
+}
+
+a, h1, h2, h3 {
+    font-family: title-font;
+    color: var(--white);
+}
+
+a:hover {
+    color: var(--terraform-purple);
+}
+
+.special {
+    color: var(--packer-blue) !important;
+    font-weight: bold;
+}
+
+@media (min-aspect-ratio: 6/5) {
+    html {
+        height: 100%;
+    }
+
+    body {
+        display: grid;
+        background-color: var(--black);
+        grid-template-areas: "navbar" "showcase" "about";
+        grid-template-rows: 10vh 75vh 70vh;
+    }
+
+    a, h1, h2, h3 {
+        font-size: 1.3rem;
+        font-weight: bold;
+    }
+
+    .navbar {
+        grid-area: navbar;
+        display: grid;
+        grid-template-areas: ".. logo navpills .." ".. logo .. ..";
+        grid-template-columns: 15vw 20vw 50vw 15vh;
+        grid-template-rows: 10vh 5vh;
+    }
+
+    .navbar-brand {
+        grid-area: logo;
+    }
+
+    .logo {
+        padding-top: 2rem;
+        width: 9rem;
+    }
+
+    .nav-pill-holder {
+        grid-area: navpills;
+    }
+
+    .nav-item {
+        padding-left: 4rem;
+    }
+
+    .showcase-div {
+        grid-area: showcase;
+        overflow: hidden;
+
+    }
+    .about-div{
+        grid-area: about;
+        padding: 5vh;
+    }
+    .about-holder{
+        border: 1px solid white;
+        display: grid;
+        grid-template-rows: 10vh 40vh 10vh;
+        height: 100%;
+    }
+
+}
+
+@media (max-aspect-ratio: 6/5) {
+
+}
