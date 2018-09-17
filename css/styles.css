@@ -1,14 +1,24 @@
 @font-face {
-    font-family: title-font;
+    font-family: EVVA;
     src: url("../fonts/EVAA.ttf");
     /*src: local(Ubuntu);*/
 }
 
+@font-face {
+    font-family: Ubuntu;
+    src: url("../fonts/Ubuntu-L.ttf");
+    /*src: local(Ubuntu);*/
+}
+
 :root {
-    --klavika-font: title-font, Helvetica, sans-serif;
-    --open-sans-font: "open-sans", "Open Sans", sans-serif;
+    --title-font: EVVA, Helvetica, sans-serif;
+    --content-font: Ubuntu, "Open Sans", sans-serif;
     --monospace-font: "Fira Mono", monospace;
     --default-font-size: 16px;
+    --hedding-font-size: 3rem;
+    --navs-font-size: 1.3rem;
+    --content-font-size: 1.5rem;
+    --sub-content-font-size: 1.2rem;
     --font-weight-reg: 400;
     --font-weight-bold: 600;
     --black: #000;
@@ -33,11 +43,11 @@
     --gutter: 3.125%;
     --full-column: 8.59375%;
     --default-blue: #1563ff;
-    --nomad-green: #00bc7f;
-    --terraform-purple: #5e3aed;
-    --consul-pink: #c62a71;
-    --vault-gray: #7c8797;
-    --packer-blue: #00acff;
+    --green: #00bc7f;
+    --purple: #5e3aed;
+    --pink: #c62a71;
+    --gray: #7c8797;
+    --blue: #00acff;
 }
 
 .navbar {
@@ -47,37 +57,52 @@
     border-bottom: white 0.02rem solid;
 }
 
-a, h1, h2, h3 {
-    font-family: title-font;
+a, h1, h2 {
+    font-family: var(--title-font);
+    color: var(--white);
+}
+
+h3, h4, h5 {
+    font-family: var(--content-font);
+    font-weight: bolder;
     color: var(--white);
 }
 
 a:hover {
-    color: var(--terraform-purple);
+    color: var(--purple);
 }
 
+
 .special {
-    color: var(--packer-blue) !important;
+    color: var(--blue) !important;
+    font-weight: bold;
+}
+
+.special2 {
+    color: var(--purple) !important;
     font-weight: bold;
 }
 
 @media (min-aspect-ratio: 6/5) {
     html {
         height: 100%;
+        width: 100%;
+        font-size: var(--default-font-size);
     }
 
     body {
         display: grid;
         background-color: var(--black);
-        grid-template-areas: "navbar" "showcase" "about";
-        grid-template-rows: 10vh 75vh 70vh;
+        grid-template-areas: "navbar" "showcase" "about" "location";
+        grid-template-rows: 10vh 75vh 65vh 70vh 70vh;
     }
 
-    a, h1, h2, h3 {
-        font-size: 1.3rem;
+    a {
+        font-size: var(--navs-font-size);
         font-weight: bold;
     }
 
+    /*~~~~~~~~~~~~~~~NavBar~~~~~~~~~~~~~~~~~*/
     .navbar {
         grid-area: navbar;
         display: grid;
@@ -103,20 +128,84 @@ a:hover {
         padding-left: 4rem;
     }
 
+    /*~~~~~~~~~~~~~~~NavBar~~~~~~~~~~~~~~~~~*/
+    /*~~~~~~~~~~~~~~~ShowCase~~~~~~~~~~~~~~~~~*/
     .showcase-div {
         grid-area: showcase;
         overflow: hidden;
-
     }
-    .about-div{
+
+    /*~~~~~~~~~~~~~~~Showcase~~~~~~~~~~~~~~~~~*/
+    /*~~~~~~~~~~~~~~~About~~~~~~~~~~~~~~~~~*/
+    .about-div {
+        background: var(--black) url("../img/underlines/u3-slim.png") no-repeat center;
+        background-size: contain;
         grid-area: about;
         padding: 5vh;
     }
-    .about-holder{
-        border: 1px solid white;
+
+    .about-holder {
         display: grid;
-        grid-template-rows: 10vh 40vh 10vh;
+        grid-template-areas: "heading heading heading" "content content content" ".. .. .." "card1 card2 card3";
+        grid-template-rows: 10vh 10vh 5vh 20vh;
+        grid-template-columns: repeat(3, 33.3%);
         height: 100%;
+    }
+
+    .about-head {
+        grid-area: heading;
+        text-align: center;
+    }
+
+    .about-img {
+        grid-area: img;
+
+    }
+
+    .about-content {
+        text-align: center;
+        grid-area: content;
+        font-family: var(--content-font);
+        color: var(--white);
+        font-size: var(--content-font-size);
+    }
+
+    .about-card {
+        padding: 2vh 5vh 5vh 5vh;
+
+    }
+
+    .card1 {
+        grid-area: card1;
+    }
+
+    .card2 {
+        grid-area: card2;
+        border-left: 1px solid white;
+        border-right: 1px solid white;
+    }
+
+    .card3 {
+        grid-area: card3;
+    }
+
+    .about-card-content {
+        padding-top: 2.5vh;
+        font-size: var(--sub-content-font-size);
+        font-family: var(--content-font);
+        color: var(--white);
+    }
+
+    /*~~~~~~~~~~~~~~~About~~~~~~~~~~~~~~~~~*/
+    /*~~~~~~~~~~~~~~~Location~~~~~~~~~~~~~~~~~*/
+    .location-div {
+        grid-area: location;
+        padding: 5vh;
+        background-color: var(--gray);
+    }
+
+    .location-holder {
+
     }
 
 }
