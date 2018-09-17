@@ -72,6 +72,12 @@ a:hover {
     color: var(--purple);
 }
 
+.content {
+    font-family: var(--content-font);
+    color: var(--white);
+    font-size: var(--content-font-size);
+}
+
 .special {
     color: var(--blue) !important;
     font-weight: bold;
@@ -82,8 +88,30 @@ a:hover {
     font-weight: bold;
 }
 
+.special3 {
+    color: var(--green) !important;
+    font-weight: bold;
+}
+
+.special4 {
+    color: var(--pink) !important;
+    font-weight: bold;
+}
+
 .underline {
-    background: var(--black) url("../img/underlines/u1-slim.png") no-repeat center;
+    background: url("../img/underlines/u1-slim.png") no-repeat center;
+    background-size: contain;
+    grid-area: underline;
+}
+
+.underline2 {
+    background: url("../img/underlines/u2-slim.png") no-repeat center;
+    background-size: contain;
+    grid-area: underline;
+}
+
+.underline3 {
+    background: url("../img/underlines/u3-slim.png") no-repeat center;
     background-size: contain;
     grid-area: underline;
 }
@@ -98,8 +126,8 @@ a:hover {
     body {
         display: grid;
         background-color: var(--black);
-        grid-template-areas: "navbar" "showcase" "about" "location";
-        grid-template-rows: 10vh 75vh 60vh 70vh 70vh;
+        grid-template-areas: "navbar" "showcase" "about" "praise" "users";
+        grid-template-rows: 10vh 75vh 60vh 70vh 70vh 70vh;
     }
 
     a {
@@ -200,8 +228,6 @@ a:hover {
         }
     }
     /*~~~~~~~~~~~~~~~Pre-Loader~~~~~~~~~~~~~~~~~*/
-
-
     /*~~~~~~~~~~~~~~~NavBar~~~~~~~~~~~~~~~~~*/
     #mynav {
         opacity: 0;
@@ -258,7 +284,7 @@ a:hover {
 
     .show-card-content {
         padding-top: 2vh;
-        font-family: Ubuntu;
+        font-family: var(--content-font);
         color: var(--white);
         font-size: var(--sub-content-font-size);
     }
@@ -291,9 +317,6 @@ a:hover {
     .about-content {
         text-align: center;
         grid-area: content;
-        font-family: var(--content-font);
-        color: var(--white);
-        font-size: var(--content-font-size);
     }
 
     .about-card {
@@ -323,16 +346,78 @@ a:hover {
     }
 
     /*~~~~~~~~~~~~~~~About~~~~~~~~~~~~~~~~~*/
-    /*~~~~~~~~~~~~~~~Location~~~~~~~~~~~~~~~~~*/
-    .location-div {
-        grid-area: location;
+    /*~~~~~~~~~~~~~~~Praise~~~~~~~~~~~~~~~~~*/
+    .praise-div {
+        grid-area: praise;
         padding: 5vh;
-        background-color: var(--gray);
+        position: relative;
+        overflow: hidden;
+        /*background:linear-gradient(90deg,var(--purple),var(--blue));*/
+        background-color: var(--input-background-dark);
     }
 
-    .location-holder {
+    .praise-div::after {
+        content: "";
+        width: 1440px;
+        height: 470px;
+        background: linear-gradient(-90deg, var(--input-background-dark), var(--blue));
+        position: absolute;
+        bottom: -30vh;
+        left: 60vh;
+        -webkit-transform: skewY(-30deg);
+        transform: skewY(-30deg);
+    }
+
+    .praise-div::before {
+        content: "";
+        width: 1440px;
+        height: 470px;
+        background: linear-gradient(90deg, var(--input-background-dark), var(--blue));
+        position: absolute;
+        bottom: -30vh;
+        right: 60vh;
+        -webkit-transform: skewY(30deg);
+        transform: skewY(30deg);
+    }
+
+    .praise-holder {
+        display: grid;
+        grid-template-areas: "heading" "underline" "content" "praises";
+        grid-template-rows: min-content 4vh 5vh 50vh;
+        height: 100%;
+    }
+
+    .praise-head {
+        grid-area: heading;
+        text-align: center;
+    }
+
+    .praise-content {
+        text-align: center;
+        grid-area: content;
+    }
+
+    .praise-praises-holder{
+        grid-area: praises;
+        padding: 5vh;
+    }
+    .praises-box{
+        background-color: var(--gray-7);
+    }
+
+    /*~~~~~~~~~~~~~~~Location~~~~~~~~~~~~~~~~~*/
+    /*~~~~~~~~~~~~~~~Users~~~~~~~~~~~~~~~~~*/
+    .user-div {
+        grid-area: users;
+        background-color: white;
+        padding: 5vh;
+    }
+
+    .user-holder {
 
     }
+
+    /*~~~~~~~~~~~~~~~Users~~~~~~~~~~~~~~~~~*/
 
 }
 
