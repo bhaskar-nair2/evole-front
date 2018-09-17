@@ -133,6 +133,26 @@ a:hover {
     .showcase-div {
         grid-area: showcase;
         overflow: hidden;
+        display: grid;
+        grid-template-rows: 15vh 45vh 15vh;
+        grid-template-columns: 10vw 20vw 70vw;
+    }
+    .show-img-holder{
+        z-index: -1;
+        position: absolute;
+    }
+    .show-cards{
+        grid-row: 2;
+        grid-column: 2;
+        background-color: rgba(0,0,0,0.7);
+        padding: 4vh;
+        border-radius: 5%;
+    }
+    .show-card-content{
+        padding-top: 2vh;
+        font-family: Ubuntu;
+        color: var(--white);
+        font-size: var(--sub-content-font-size);
     }
 
     /*~~~~~~~~~~~~~~~Showcase~~~~~~~~~~~~~~~~~*/
