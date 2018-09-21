@@ -111,7 +111,7 @@ a:hover {
 }
 
 .underline3 {
-    background: url("../img/underlines/u3-slim.png") no-repeat center;
+    background: url("../img/underlines/u1-slim-invert.png") no-repeat center;
     background-size: contain;
     grid-area: underline;
 }
@@ -126,8 +126,8 @@ a:hover {
     body {
         display: grid;
         background-color: var(--black);
-        grid-template-areas: "navbar" "showcase" "about" "praise" "users";
-        grid-template-rows: 10vh 75vh 60vh 70vh 70vh 70vh;
+        grid-template-areas: "navbar" "showcase" "about" "games" "praise" "users" "locations" "footer";
+        grid-template-rows: 10vh 75vh 60vh 70vh 70vh 70vh 70vh 70vh;
     }
 
     a {
@@ -346,6 +346,12 @@ a:hover {
     }
 
     /*~~~~~~~~~~~~~~~About~~~~~~~~~~~~~~~~~*/
+    /*~~~~~~~~~~~~~~~Games~~~~~~~~~~~~~~~~~*/
+    .games-div{
+        grid-area: games;
+        background-color: var(--input-border-dark);
+    }
+    /*~~~~~~~~~~~~~~~Games~~~~~~~~~~~~~~~~~*/
     /*~~~~~~~~~~~~~~~Praise~~~~~~~~~~~~~~~~~*/
     .praise-div {
         grid-area: praise;
@@ -405,7 +411,7 @@ a:hover {
         background-color: var(--gray-7);
     }
 
-    /*~~~~~~~~~~~~~~~Location~~~~~~~~~~~~~~~~~*/
+    /*~~~~~~~~~~~~~~~Praise~~~~~~~~~~~~~~~~~*/
     /*~~~~~~~~~~~~~~~Users~~~~~~~~~~~~~~~~~*/
     .user-div {
         grid-area: users;
@@ -418,6 +424,38 @@ a:hover {
     }
 
     /*~~~~~~~~~~~~~~~Users~~~~~~~~~~~~~~~~~*/
+    /*~~~~~~~~~~~~~~~Location~~~~~~~~~~~~~~~~~*/
+
+    .location-div{
+        background-color: var(--input-background-dark);
+    }
+
+    /*~~~~~~~~~~~~~~~Location~~~~~~~~~~~~~~~~~*/
+
+    /*~~~~~~~~~~~~~~~Footer~~~~~~~~~~~~~~~~~*/
+    .footer-div{
+        grid-area: footer;
+        padding: 15vh 30vh 5vh 30vh;
+        height: 100%;
+        background-color: var(--black);
+    }
+    .footer-holder{
+        height: 100%;
+        padding: 5vh 10vh 5vh 10vh;
+        border-top: 1px solid var(--white);
+        border-bottom: 1px solid var(--white);
+        display: grid;
+        grid-template-areas: "" "" "";
+
+    }
+    .logo-holder{
+        padding: 4vh 5vh 5vh 5vh;
+    }
+    .footer-logo{
+        width: 15rem;
+    }
+    /*~~~~~~~~~~~~~~~Footer~~~~~~~~~~~~~~~~~*/
+
 
 }
 
