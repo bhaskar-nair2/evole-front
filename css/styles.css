@@ -84,18 +84,21 @@ a:hover {
 }
 
 .special2 {
-    color: var(--purple) !important;
+    border-bottom: solid 0.2em var(--purple);
+    /*color: var(--purple) !important;*/
     font-weight: bold;
 }
 
-.special3 {
-    color: var(--green) !important;
-    font-weight: bold;
+.special2 {
+    border-bottom: solid 0.2em var(--purple);
+    /*color: var(--purple) !important;*/
+    font-weight: bolder;
 }
 
-.special4 {
-    color: var(--pink) !important;
-    font-weight: bold;
+.special2:nth-child(3) {
+    border-bottom: solid 0.2em var(--green);
+    /*color: var(--purple) !important;*/
+    font-weight: bolder;
 }
 
 .underline {
@@ -347,10 +350,48 @@ a:hover {
 
     /*~~~~~~~~~~~~~~~About~~~~~~~~~~~~~~~~~*/
     /*~~~~~~~~~~~~~~~Games~~~~~~~~~~~~~~~~~*/
-    .games-div{
+    .games-div {
         grid-area: games;
+        padding: 10vh 5vh 5vh 5vh;
         background-color: var(--input-border-dark);
+        overflow: hidden;
     }
+
+    .games-holder {
+        display: grid;
+        grid-template-areas: "heading" 'images';
+        grid-template-rows: min-content 50vh;
+    }
+
+    .games-head {
+        grid-area: heading;
+        text-align: center;
+    }
+
+    .game-title-holder {
+        grid-area: images;
+        display: grid;
+        grid-template-columns: repeat(5,auto);
+    }
+
+    .game-title {
+        position: relative;
+        background: no-repeat center center;
+        background-size: cover;
+    }
+    .game-title:hover{
+        z-index: 9;
+        transform: scale(1.2);
+    }
+    .game-images {
+        height: 100%;
+        right: 13.5vw;
+        position: relative;
+    }
+    .game-images:hover{
+        filter: grayscale(0%);
+    }
+
     /*~~~~~~~~~~~~~~~Games~~~~~~~~~~~~~~~~~*/
     /*~~~~~~~~~~~~~~~Praise~~~~~~~~~~~~~~~~~*/
     .praise-div {
@@ -359,26 +400,14 @@ a:hover {
         position: relative;
         overflow: hidden;
         /*background:linear-gradient(90deg,var(--purple),var(--blue));*/
-        background-color: var(--input-background-dark);
-    }
-
-    .praise-div::after {
-        content: "";
-        width: 1440px;
-        height: 470px;
-        background: linear-gradient(-90deg, var(--input-background-dark), var(--blue));
-        position: absolute;
-        bottom: -30vh;
-        left: 60vh;
-        -webkit-transform: skewY(-30deg);
-        transform: skewY(-30deg);
+        background-color: var(--black);
     }
 
     .praise-div::before {
         content: "";
         width: 1440px;
         height: 470px;
-        background: linear-gradient(90deg, var(--input-background-dark), var(--blue));
+        background: linear-gradient(90deg, var(--black), var(--gray-1));
         position: absolute;
         bottom: -30vh;
         right: 60vh;
@@ -403,11 +432,12 @@ a:hover {
         grid-area: content;
     }
 
-    .praise-praises-holder{
+    .praise-praises-holder {
         grid-area: praises;
         padding: 5vh;
     }
-    .praises-box{
+
+    .praises-box {
         background-color: var(--gray-7);
     }
 
@@ -425,21 +455,20 @@ a:hover {
 
     /*~~~~~~~~~~~~~~~Users~~~~~~~~~~~~~~~~~*/
     /*~~~~~~~~~~~~~~~Location~~~~~~~~~~~~~~~~~*/
-
-    .location-div{
+    .location-div {
         background-color: var(--input-background-dark);
     }
 
     /*~~~~~~~~~~~~~~~Location~~~~~~~~~~~~~~~~~*/
-
     /*~~~~~~~~~~~~~~~Footer~~~~~~~~~~~~~~~~~*/
-    .footer-div{
+    .footer-div {
         grid-area: footer;
         padding: 15vh 30vh 5vh 30vh;
         height: 100%;
         background-color: var(--black);
     }
-    .footer-holder{
+
+    .footer-holder {
         height: 100%;
         padding: 5vh 10vh 5vh 10vh;
         border-top: 1px solid var(--white);
@@ -448,14 +477,16 @@ a:hover {
         grid-template-areas: "" "" "";
 
     }
-    .logo-holder{
+
+    .logo-holder {
         padding: 4vh 5vh 5vh 5vh;
     }
-    .footer-logo{
+
+    .footer-logo {
         width: 15rem;
     }
-    /*~~~~~~~~~~~~~~~Footer~~~~~~~~~~~~~~~~~*/
 
+    /*~~~~~~~~~~~~~~~Footer~~~~~~~~~~~~~~~~~*/
 
 }
 
