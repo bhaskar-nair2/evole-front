@@ -84,22 +84,10 @@ a:hover {
 }
 
 .special2 {
-    border-bottom: solid 0.2em var(--purple);
-    /*color: var(--purple) !important;*/
-    font-weight: bold;
-}
-
-.special2 {
-    border-bottom: solid 0.2em var(--purple);
-    /*color: var(--purple) !important;*/
+    /*border-bottom: solid 0.2em var(--purple);*/
     font-weight: bolder;
 }
 
-.special2:nth-child(3) {
-    border-bottom: solid 0.2em var(--green);
-    /*color: var(--purple) !important;*/
-    font-weight: bolder;
-}
 
 .underline {
     background: url("../img/underlines/u1-slim.png") no-repeat center;
@@ -130,7 +118,7 @@ a:hover {
         display: grid;
         background-color: var(--black);
         grid-template-areas: "navbar" "showcase" "about" "games" "praise" "users" "locations" "footer";
-        grid-template-rows: 10vh 75vh 60vh 70vh 70vh 70vh 70vh 70vh;
+        grid-template-rows: 10vh 75vh 60vh 75vh 70vh 70vh 70vh 70vh;
     }
 
     a {
@@ -359,8 +347,8 @@ a:hover {
 
     .games-holder {
         display: grid;
-        grid-template-areas: "heading" 'images';
-        grid-template-rows: min-content 50vh;
+        grid-template-areas: "heading" ".." 'images';
+        grid-template-rows: min-content 4vh 50vh;
     }
 
     .games-head {
