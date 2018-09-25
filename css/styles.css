@@ -88,7 +88,6 @@ a:hover {
     font-weight: bolder;
 }
 
-
 .underline {
     background: url("../img/underlines/u1-slim.png") no-repeat center;
     background-size: contain;
@@ -118,7 +117,7 @@ a:hover {
         display: grid;
         background-color: var(--black);
         grid-template-areas: "navbar" "showcase" "about" "games" "praise" "users" "locations" "footer";
-        grid-template-rows: 10vh 75vh 60vh 75vh 70vh 70vh 70vh 70vh;
+        grid-template-rows: [nav] 10vh [show] 75vh [about] 60vh [games] 70vh [praise] 70vh [users] 70vh [location] 70vh [footer] 70vh;
     }
 
     a {
@@ -136,86 +135,67 @@ a:hover {
 
     }
 
-    .sk-cube-grid {
-        top: 50%;
-        width: 70px;
-        height: 70px;
-        margin: 50vh auto;
+    .spinner {
+        top: 40%;
+        left: 45%;
+        width: 200px;
+        height: 200px;
+        position: relative;
+        text-align: center;
+
+        -webkit-animation: sk-rotate 2.0s infinite linear;
+        animation: sk-rotate 2.0s infinite linear;
     }
 
-    .sk-cube-grid .sk-cube {
-        width: 33%;
-        height: 33%;
+    .dot1, .dot2 {
+        width: 60%;
+        height: 60%;
+        display: inline-block;
+        position: absolute;
+        top: 0;
         background-color: var(--blue);
-        float: left;
-        -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
-        animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+        border-radius: 100%;
+
+        -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+        animation: sk-bounce 2.0s infinite ease-in-out;
     }
 
-    .sk-cube-grid .sk-cube1 {
-        -webkit-animation-delay: 0.2s;
-        animation-delay: 0.2s;
+    .dot2 {
+        top: auto;
+        bottom: 0;
+        -webkit-animation-delay: -1.0s;
+        animation-delay: -1.0s;
     }
 
-    .sk-cube-grid .sk-cube2 {
-        -webkit-animation-delay: 0.3s;
-        animation-delay: 0.3s;
-    }
-
-    .sk-cube-grid .sk-cube3 {
-        -webkit-animation-delay: 0.4s;
-        animation-delay: 0.4s;
-    }
-
-    .sk-cube-grid .sk-cube4 {
-        -webkit-animation-delay: 0.1s;
-        animation-delay: 0.1s;
-    }
-
-    .sk-cube-grid .sk-cube5 {
-        -webkit-animation-delay: 0.2s;
-        animation-delay: 0.2s;
-    }
-
-    .sk-cube-grid .sk-cube6 {
-        -webkit-animation-delay: 0.3s;
-        animation-delay: 0.3s;
-    }
-
-    .sk-cube-grid .sk-cube7 {
-        -webkit-animation-delay: 0s;
-        animation-delay: 0s;
-    }
-
-    .sk-cube-grid .sk-cube8 {
-        -webkit-animation-delay: 0.1s;
-        animation-delay: 0.1s;
-    }
-
-    .sk-cube-grid .sk-cube9 {
-        -webkit-animation-delay: 0.2s;
-        animation-delay: 0.2s;
-    }
-
-    @-webkit-keyframes sk-cubeGridScaleDelay {
-        0%, 70%, 100% {
-            -webkit-transform: scale3D(1, 1, 1);
-            transform: scale3D(1, 1, 1);
+    @-webkit-keyframes sk-rotate {
+        100% {
+            -webkit-transform: rotate(360deg)
         }
-        35% {
-            -webkit-transform: scale3D(0, 0, 1);
-            transform: scale3D(0, 0, 1);
+    }
+    @keyframes sk-rotate {
+        100% {
+            transform: rotate(360deg);
+            -webkit-transform: rotate(360deg)
         }
     }
 
-    @keyframes sk-cubeGridScaleDelay {
-        0%, 70%, 100% {
-            -webkit-transform: scale3D(1, 1, 1);
-            transform: scale3D(1, 1, 1);
+    @-webkit-keyframes sk-bounce {
+        0%, 100% {
+            -webkit-transform: scale(0.0)
         }
-        35% {
-            -webkit-transform: scale3D(0, 0, 1);
-            transform: scale3D(0, 0, 1);
+        50% {
+            -webkit-transform: scale(1.0)
+        }
+    }
+
+    @keyframes sk-bounce {
+        0%, 100% {
+            transform: scale(0.0);
+            -webkit-transform: scale(0.0);
+        }
+        50% {
+            transform: scale(1.0);
+            -webkit-transform: scale(1.0);
         }
     }
     /*~~~~~~~~~~~~~~~Pre-Loader~~~~~~~~~~~~~~~~~*/
@@ -290,7 +270,7 @@ a:hover {
     .about-holder {
         display: grid;
         grid-template-areas: "heading heading heading" "underline underline underline" "content content content" ".. .. .." "card1 card2 card3";
-        grid-template-rows: min-content 4vh 5vh 10vh 20vh;
+        grid-template-rows: min-content 5vh 5vh 10vh 20vh;
         grid-template-columns: repeat(3, 33.3%);
         height: 100%;
     }
@@ -340,8 +320,8 @@ a:hover {
     /*~~~~~~~~~~~~~~~Games~~~~~~~~~~~~~~~~~*/
     .games-div {
         grid-area: games;
-        padding: 10vh 5vh 5vh 5vh;
-        background-color: var(--input-border-dark);
+        padding: 5vh 5vh 5vh 5vh;
+        background-color: var(--input-background-dark);
         overflow: hidden;
     }
 
@@ -354,30 +334,45 @@ a:hover {
     .games-head {
         grid-area: heading;
         text-align: center;
+        color: black;
     }
 
     .game-title-holder {
         grid-area: images;
         display: grid;
-        grid-template-columns: repeat(5,auto);
+        grid-template-columns: repeat(5, 1fr);
     }
 
     .game-title {
         position: relative;
         background: no-repeat center center;
         background-size: cover;
+        transition: all 0.15s ease-in-out;
+
     }
-    .game-title:hover{
+
+    .game-title:hover {
         z-index: 9;
         transform: scale(1.2);
+        filter: grayscale(100%);
     }
-    .game-images {
-        height: 100%;
-        right: 13.5vw;
-        position: relative;
+
+    .game-desc {
+        padding-left: 1vw;
+        height: 8vh;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.4);
+        transition: all 0.1s ease-in-out;
     }
-    .game-images:hover{
-        filter: grayscale(0%);
+
+    .game-title .game-desc {
+        visibility: hidden;
+    }
+
+    .game-title:hover .game-desc{
+        visibility: visible;
     }
 
     /*~~~~~~~~~~~~~~~Games~~~~~~~~~~~~~~~~~*/
