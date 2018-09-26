@@ -209,8 +209,8 @@ a:hover {
     .navbar {
         height: 10vh;
         display: grid;
-        grid-template-areas: ".. logo navpills ..";
-        grid-template-columns: 15vw 20vw 50vw 15vh;
+        grid-template-areas: ".. logo .. navpills ..";
+        grid-template-columns: 15vw 20vw 2vw 50vw 8vw;
         grid-template-rows: minmax(7vh,10vh);
         transition: all 0.8s ease-in-out;
     }
@@ -375,7 +375,7 @@ a:hover {
         position: absolute;
         bottom: 0;
         background: rgba(0, 0, 0, 0.4);
-        transition: all 0.1s ease-in-out;
+        transition: all 0.1s ease;
     }
 
     .game-title .game-desc {
