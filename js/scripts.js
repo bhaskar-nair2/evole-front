@@ -5,9 +5,9 @@ $(document).ready(() => {
 });
 
 $(window).on("load", function () {
-    $('#pre-loader').css({
-        display: 'None'
-    });
+    // $('#pre-loader').css({
+    //     display: 'None'
+    // });
 });
 $(document).on('scroll', function (event) {
     let dh = $(document).height();

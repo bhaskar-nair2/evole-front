@@ -109,77 +109,84 @@ a:hover {
 
     /*~~~~~~~~~~~~~~~Pre-Loader~~~~~~~~~~~~~~~~~*/
     .pre-loader {
+        position: fixed;
         width: 100%;
         height: 100%;
         z-index: 999;
         background-color: rgba(0, 0, 0, 0.96);
-        position: fixed;
+    }
+
+    .spinner-position {
+        width: 100%;
+        height: 100%;
+        /*padding: 40vh 0 0 38vw;*/
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
     }
 
-    .spinner {
-        top: 40%;
-        left: 45%;
-        width: 200px;
-        height: 200px;
-        position: relative;
-        text-align: center;
-
-        -webkit-animation: sk-rotate 2.0s infinite linear;
-        animation: sk-rotate 2.0s infinite linear;
-    }
-
-    .dot1, .dot2 {
-        width: 60%;
-        height: 60%;
-        display: inline-block;
+    .lds-dual-ring {
         position: absolute;
-        top: 0;
-        background-color: var(--blue);
-        border-radius: 100%;
-
-        -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
-        animation: sk-bounce 2.0s infinite ease-in-out;
+        content: " ";
+        display: block;
+        width: 25vh;
+        height: 25vh;
+        border-radius: 50%;
+        border: 5px solid #fff;
+        border-color: transparent #fff transparent #fff;
+        animation: lds-dual-ring 4s linear infinite;
     }
 
-    .dot2 {
-        top: auto;
-        bottom: 0;
-        -webkit-animation-delay: -1.0s;
-        animation-delay: -1.0s;
+    .lds-dual-ring-small {
+        position: absolute;
+        content: " ";
+        display: block;
+        height: 20vh;
+        width: 20vh;
+        border-radius: 50%;
+        border: 5px solid #fff;
+        border-color: var(--blue) transparent var(--blue) transparent;
+        animation: lds-dual-ring-small 2s linear infinite;
+
     }
 
-    @-webkit-keyframes sk-rotate {
-        100% {
-            -webkit-transform: rotate(360deg)
+
+    @keyframes lds-dual-ring {
+        0% {
+            opacity: 0.20;
+            transform: rotate(0deg);
         }
-    }
-    @keyframes sk-rotate {
+        50% {
+            opacity: 1;
+            transform: rotate(180deg);
+        }
+
+        75%{
+            opacity: 1;
+            transform: rotate(200deg);
+        }
         100% {
+            opacity: 0.20;
             transform: rotate(360deg);
-            -webkit-transform: rotate(360deg)
         }
     }
 
-    @-webkit-keyframes sk-bounce {
-        0%, 100% {
-            -webkit-transform: scale(0.0)
+    @keyframes lds-dual-ring-small {
+        0% {
+            opacity: 0.20;
+            transform: rotate(0deg);
         }
         50% {
-            -webkit-transform: scale(1.0)
+            opacity: 1;
+            transform: rotate(-180deg);
+        }
+        100% {
+            opacity: 0.20;
+            transform: rotate(-360deg);
         }
     }
 
-    @keyframes sk-bounce {
-        0%, 100% {
-            transform: scale(0.0);
-            -webkit-transform: scale(0.0);
-        }
-        50% {
-            transform: scale(1.0);
-            -webkit-transform: scale(1.0);
-        }
-    }
     /*~~~~~~~~~~~~~~~Pre-Loader~~~~~~~~~~~~~~~~~*/
     /*~~~~~~~~~~~~~~~NavBar~~~~~~~~~~~~~~~~~*/
     #mynav {
@@ -193,7 +200,7 @@ a:hover {
         display: grid;
         grid-template-areas: ".. logo .. navpills ..";
         grid-template-columns: 15vw 20vw 2vw 50vw 8vw;
-        grid-template-rows: minmax(7vh,10vh);
+        grid-template-rows: minmax(7vh, 10vh);
         transition: all 0.8s ease-in-out;
     }
 
@@ -215,10 +222,11 @@ a:hover {
         padding-left: 2vw;
     }
 
-    .navbar-min{
+    .navbar-min {
         height: 7vh;
     }
-    .logo-min{
+
+    .logo-min {
         padding-top: 0;
         width: 4rem;
     }
@@ -364,7 +372,7 @@ a:hover {
         visibility: hidden;
     }
 
-    .game-title:hover .game-desc{
+    .game-title:hover .game-desc {
         visibility: visible;
     }
 
