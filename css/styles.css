@@ -14,11 +14,10 @@
     --title-font: EVVA, Helvetica, sans-serif;
     --content-font: Ubuntu, "Open Sans", sans-serif;
     --monospace-font: "Fira Mono", monospace;
-    --default-font-size: 16px;
-    --hedding-font-size: 3rem;
-    --navs-font-size: 1.3rem;
-    --content-font-size: 1.5rem;
-    --sub-content-font-size: 1.2rem;
+    --hedding-font-size: 3vw;
+    --navs-font-size: 1.3vw;
+    --content-font-size: 1.5vw;
+    --sub-content-font-size: 1.2vw;
     --font-weight-reg: 400;
     --font-weight-bold: 600;
     --black: #000;
@@ -54,7 +53,7 @@
     background-color: rgba(0, 0, 0, 0.80);
     padding: 0;
     margin: 0;
-    border-bottom: white 0.02rem solid;
+    border-bottom: white 0.02vw solid;
 }
 
 a, h1, h2 {
@@ -92,7 +91,6 @@ a:hover {
     html {
         height: 100%;
         width: 100%;
-        font-size: var(--default-font-size);
     }
 
     body {
@@ -214,8 +212,8 @@ a:hover {
     }
 
     .logo {
-        padding-top: 5rem;
-        width: 9rem;
+        padding-top: 5vw;
+        width: 9vw;
         transition: all 0.6s ease-in-out;
     }
 
@@ -232,8 +230,9 @@ a:hover {
     }
 
     .logo-min {
-        padding-top: 0;
-        width: 4rem;
+        margin: 0;
+        padding: 0;
+        width: 3.5vw;
     }
 
     /*~~~~~~~~~~~~~~~NavBar~~~~~~~~~~~~~~~~~*/
@@ -241,26 +240,23 @@ a:hover {
     .showcase-div {
         grid-area: showcase;
         overflow: hidden;
-        display: grid;
-        grid-template-rows: 20vh 35vh 20vh;
-        grid-template-columns: 10vw 20vw 70vw;
     }
 
     .show-img-holder {
         z-index: -1;
         position: absolute;
+        overflow: hidden;
     }
 
     .show-cards {
-        grid-row: 2;
-        grid-column: 2;
+        position: absolute;
         background-color: rgba(0, 0, 0, 0.7);
-        padding: 4vh;
+        margin: 20vh 70vw 20vh 10vw;
+        padding: 6vh 4vh 4vh 4vh;
         border-radius: 5%;
     }
 
     .show-card-content {
-        padding-top: 2vh;
         font-family: var(--content-font);
         color: var(--white);
         font-size: var(--sub-content-font-size);
@@ -365,7 +361,7 @@ a:hover {
 
     .game-desc {
         padding-left: 1vw;
-        height: 8vh;
+        height: min-content;
         width: 100%;
         position: absolute;
         bottom: 0;
