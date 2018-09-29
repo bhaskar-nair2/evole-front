@@ -80,6 +80,7 @@ a:hover {
 .special {
     color: var(--blue) !important;
     font-weight: bold;
+    filter: grayscale(0%);
 }
 
 .special2 {
@@ -149,7 +150,6 @@ a:hover {
 
     }
 
-
     @keyframes lds-dual-ring {
         0% {
             opacity: 0.20;
@@ -160,7 +160,7 @@ a:hover {
             transform: rotate(110deg);
         }
 
-        75%{
+        75% {
             opacity: 1;
             transform: rotate(200deg);
         }
@@ -180,7 +180,7 @@ a:hover {
             transform: rotate(110deg);
         }
 
-        75%{
+        75% {
             opacity: 0.20;
             transform: rotate(200deg);
         }
@@ -357,8 +357,8 @@ a:hover {
         z-index: 9;
         transform: scale(1.2);
         filter: grayscale(100%);
-    }
 
+    }
     .game-desc {
         padding-left: 1vw;
         height: min-content;
@@ -385,17 +385,18 @@ a:hover {
         padding: 5vh;
     }
 
-    .loc-holder{
+    .loc-holder {
         display: grid;
         grid-template-areas: "head" "map";
         grid-template-rows: 10vh 65vh;
     }
-    .loc-head{
+
+    .loc-head {
         width: 100%;
         text-align: center;
     }
 
-    .loc-map{
+    .loc-map {
         grid-area: map;
         position: relative;
         overflow: hidden;
@@ -431,20 +432,19 @@ a:hover {
     }
 
     /*.praise-div::before {*/
-        /*content: "";*/
-        /*width: 1440px;*/
-        /*height: 470px;*/
-        /*background: linear-gradient(90deg, var(--gray-1), var(--black));*/
-        /*position: absolute;*/
-        /*bottom: -30vh;*/
-        /*right: 60vh;*/
-        /*-webkit-transform: skewY(30deg);*/
-        /*transform: skewY(30deg);*/
+    /*content: "";*/
+    /*width: 1440px;*/
+    /*height: 470px;*/
+    /*background: linear-gradient(90deg, var(--gray-1), var(--black));*/
+    /*position: absolute;*/
+    /*bottom: -30vh;*/
+    /*right: 60vh;*/
+    /*-webkit-transform: skewY(30deg);*/
+    /*transform: skewY(30deg);*/
     /*}*/
-
     .praise-holder {
         display: grid;
-        grid-template-areas: "heading" "underline" "content" "praises";
+        grid-template-areas: "heading" ".." "content" "logos";
         grid-template-rows: min-content 4vh 5vh 50vh;
         height: 100%;
     }
@@ -458,28 +458,27 @@ a:hover {
         text-align: center;
         grid-area: content;
     }
+    .praise-logo-holder{
+        grid-area: logos;
+        display: grid;
+        grid-template-rows: 100%;
+        grid-template-columns: repeat(5,1fr);
+        grid-gap: 2vw;
 
-    .praise-praises-holder {
-        grid-area: praises;
-        padding: 5vh;
     }
-
-    .praises-box {
-        background-color: var(--gray-7);
+    .praise-logos{
+        align-self: center;
+        width: 100%;
     }
-
     /*~~~~~~~~~~~~~~~Praise~~~~~~~~~~~~~~~~~*/
     /*!*~~~~~~~~~~~~~~~Users~~~~~~~~~~~~~~~~~*!*/
     /*.user-div {*/
-        /*grid-area: users;*/
-        /*background-color: white;*/
-        /*padding: 5vh;*/
+    /*grid-area: users;*/
+    /*background-color: white;*/
+    /*padding: 5vh;*/
     /*}*/
-
     /*.user-holder {*/
-
     /*}*/
-
     /*!*~~~~~~~~~~~~~~~Users~~~~~~~~~~~~~~~~~*!*/
     /*~~~~~~~~~~~~~~~Footer~~~~~~~~~~~~~~~~~*/
     .footer-div {
