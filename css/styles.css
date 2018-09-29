@@ -483,7 +483,7 @@ a:hover {
     /*~~~~~~~~~~~~~~~Footer~~~~~~~~~~~~~~~~~*/
     .footer-div {
         grid-area: footer;
-        padding: 15vh 30vh 5vh 30vh;
+        padding: 12vh 15vw 8vh 15vw;
         height: 100%;
         background-color: var(--black);
     }
@@ -494,17 +494,65 @@ a:hover {
         border-top: 1px solid var(--white);
         border-bottom: 1px solid var(--white);
         display: grid;
-        grid-template-areas: "" "" "";
-
+        grid-template-areas: "logo links links";
+        grid-template-rows: 100%;
+        grid-template-columns: 1fr 1fr 1fr;
     }
 
     .logo-holder {
-        padding: 4vh 5vh 5vh 5vh;
+        grid-area: logo;
+        padding: 4vh 2vw 4vh 2vw;
+        border-right: 2px white solid;
+        display: grid;
     }
 
     .footer-logo {
-        width: 15rem;
+        padding-left: 1vw;
+        align-self: center;
+        width: 13vw;
     }
+    .link-holder{
+        height: 100%;
+        grid-area: links;
+        display: grid;
+        grid-template-areas: "social policy" "support contact";
+        grid-template-rows: 50% 50%;
+        grid-template-columns: 50% 50%;
+    }
+    .foot-social{
+        grid-area: social;
+    }
+    .foot-policy{
+        grid-area: policy;
+    }
+    .foot-support{
+        grid-area: support;
+    }
+    .foot-contact{
+        grid-area: contact;
+    }
+
+    .foot-sections{
+        padding: 1vh 0 0 2vw;
+    }
+    .foot-sections h3{
+        color: var(--blue);
+        font-size: 3vh;
+    }
+    .foot-sections ul{
+        list-style-type: none;
+        padding: 0 0 0 1vh;
+        margin: 0;
+    }
+    .foot-sections ul li{
+        padding-top: 0.8vh;
+    }
+    .foot-sections ul li a{
+        color: var(--white);
+        font-size: 2vh;
+        font-family: Ubuntu;
+    }
+
 
     /*~~~~~~~~~~~~~~~Footer~~~~~~~~~~~~~~~~~*/
 
