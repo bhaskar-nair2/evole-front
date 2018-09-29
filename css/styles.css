@@ -33,7 +33,7 @@
     --gray-10: #f3f4f6;
     --white: #fff;
     --input-background-light: #fff;
-    --input-background-dark: #1b212d;
+    --input-background-dark: #232323;
     --input-border-light: #b4b8bc;
     --input-border-dark: #262e42;
     --input-placeholder-color: #656a70;
@@ -96,8 +96,8 @@ a:hover {
     body {
         display: grid;
         background-color: var(--black);
-        grid-template-areas: "navbar" "showcase" "about" "games" "praise" "users" "locations" "footer";
-        grid-template-rows: [nav] 10vh [show] 75vh [about] 60vh [games] 70vh [praise] 70vh [users] 70vh [location] 70vh [footer] 70vh;
+        grid-template-areas: "navbar" "showcase" "about" "games" "locations" "praise" "footer";
+        grid-template-rows: [nav] 10vh [show] 75vh [about] 60vh [games] 70vh [location] 75vh [praise] 70vh [footer] 70vh;
     }
 
     a {
@@ -232,7 +232,7 @@ a:hover {
     .logo-min {
         margin: 0;
         padding: 0;
-        width: 3.5vw;
+        transform: scale(0.33);
     }
 
     /*~~~~~~~~~~~~~~~NavBar~~~~~~~~~~~~~~~~~*/
@@ -323,7 +323,7 @@ a:hover {
     .games-div {
         grid-area: games;
         padding: 5vh 5vh 5vh 5vh;
-        background-color: var(--input-background-dark);
+        background-color: var(--gray-1);
         overflow: hidden;
     }
 
@@ -378,6 +378,48 @@ a:hover {
     }
 
     /*~~~~~~~~~~~~~~~Games~~~~~~~~~~~~~~~~~*/
+    /*~~~~~~~~~~~~~~~Location~~~~~~~~~~~~~~~~~*/
+    .location-div {
+        grid-area: locations;
+        background-color: var(--black);
+        padding: 5vh;
+    }
+
+    .loc-holder{
+        display: grid;
+        grid-template-areas: "head" "map";
+        grid-template-rows: 10vh 65vh;
+    }
+    .loc-head{
+        width: 100%;
+        text-align: center;
+    }
+
+    .loc-map{
+        grid-area: map;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .map {
+        position: relative;
+    }
+
+    .mapTooltip {
+        position: absolute;
+        background-color: #474c4b;
+        moz-opacity: 0.70;
+        opacity: 0.70;
+        filter: alpha(opacity=70);
+        border-radius: 10px;
+        padding: 10px;
+        z-index: 1000;
+        max-width: 200px;
+        display: none;
+        color: #fff;
+    }
+
+    /*~~~~~~~~~~~~~~~Location~~~~~~~~~~~~~~~~~*/
     /*~~~~~~~~~~~~~~~Praise~~~~~~~~~~~~~~~~~*/
     .praise-div {
         grid-area: praise;
@@ -385,20 +427,20 @@ a:hover {
         position: relative;
         overflow: hidden;
         /*background:linear-gradient(90deg,var(--purple),var(--blue));*/
-        background-color: var(--black);
+        background-color: var(--gray-1);
     }
 
-    .praise-div::before {
-        content: "";
-        width: 1440px;
-        height: 470px;
-        background: linear-gradient(90deg, var(--black), var(--gray-1));
-        position: absolute;
-        bottom: -30vh;
-        right: 60vh;
-        -webkit-transform: skewY(30deg);
-        transform: skewY(30deg);
-    }
+    /*.praise-div::before {*/
+        /*content: "";*/
+        /*width: 1440px;*/
+        /*height: 470px;*/
+        /*background: linear-gradient(90deg, var(--gray-1), var(--black));*/
+        /*position: absolute;*/
+        /*bottom: -30vh;*/
+        /*right: 60vh;*/
+        /*-webkit-transform: skewY(30deg);*/
+        /*transform: skewY(30deg);*/
+    /*}*/
 
     .praise-holder {
         display: grid;
@@ -427,24 +469,18 @@ a:hover {
     }
 
     /*~~~~~~~~~~~~~~~Praise~~~~~~~~~~~~~~~~~*/
-    /*~~~~~~~~~~~~~~~Users~~~~~~~~~~~~~~~~~*/
-    .user-div {
-        grid-area: users;
-        background-color: white;
-        padding: 5vh;
-    }
+    /*!*~~~~~~~~~~~~~~~Users~~~~~~~~~~~~~~~~~*!*/
+    /*.user-div {*/
+        /*grid-area: users;*/
+        /*background-color: white;*/
+        /*padding: 5vh;*/
+    /*}*/
 
-    .user-holder {
+    /*.user-holder {*/
 
-    }
+    /*}*/
 
-    /*~~~~~~~~~~~~~~~Users~~~~~~~~~~~~~~~~~*/
-    /*~~~~~~~~~~~~~~~Location~~~~~~~~~~~~~~~~~*/
-    .location-div {
-        background-color: var(--input-background-dark);
-    }
-
-    /*~~~~~~~~~~~~~~~Location~~~~~~~~~~~~~~~~~*/
+    /*!*~~~~~~~~~~~~~~~Users~~~~~~~~~~~~~~~~~*!*/
     /*~~~~~~~~~~~~~~~Footer~~~~~~~~~~~~~~~~~*/
     .footer-div {
         grid-area: footer;
