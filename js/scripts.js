@@ -50,14 +50,15 @@ $(".mapcontainer").mapael({
                 }
             },
             tooltip: {},
-            type: 'circle'
+            type: 'circle',
+            size: 10
         },
 
     },
     plots: {
         "newyork": {
             "latitude": 40.667,
-            "longitude": -73.833,
+            "longitude": -74.0060,
             tooltip: {content: "New York, USA"},
 
         },
@@ -65,6 +66,12 @@ $(".mapcontainer").mapael({
             "latitude": 19.0760,
             "longitude": 72.8777,
             tooltip: {content: "Mumbai, India"},
+
+        },
+        "bangalore": {
+            "latitude": 12.9716,
+            "longitude": 77.5946,
+            tooltip: {content: "Bangalore, India"},
 
         },
         "singapore": {
@@ -82,6 +89,21 @@ $(".mapcontainer").mapael({
             "latitude": 50.1109,
             "longitude": 8.6821,
             tooltip: {content: "Frankfurt, Germany"},
+        },
+        "london": {
+            "latitude": 51.5074,
+            "longitude": 0.1278,
+            tooltip: {content: "London, UK"},
+        },
+        "helsinki": {
+            "latitude": 60.1699,
+            "longitude": 24.9384,
+            tooltip: {content: "Helsinki, Finland"},
+        },
+        "chicago": {
+            "latitude": 41.8781,
+            "longitude": -87.6298,
+            tooltip: {content: "Chicago, USA"},
         }
     }
 });
