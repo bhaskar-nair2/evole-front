@@ -618,8 +618,8 @@ a {
     }
 
     .nav-pill-holder {
-        /*grid-area: navpills;*/
-        /*position: absolute;*/
+        grid-area: navpills;
+        position: absolute;
     }
 
     .nav-item {
