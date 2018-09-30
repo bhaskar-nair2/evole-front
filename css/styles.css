@@ -10,6 +10,11 @@
     /*src: local(Ubuntu);*/
 }
 
+html {
+    height: 100%;
+    width: 100%;
+}
+
 :root {
     --title-font: EVVA, Helvetica, sans-serif;
     --content-font: Ubuntu, "Open Sans", sans-serif;
@@ -88,109 +93,105 @@ a:hover {
     font-weight: bolder;
 }
 
-@media (min-aspect-ratio: 6/5) {
-    html {
-        height: 100%;
-        width: 100%;
+a {
+    font-size: var(--navs-font-size);
+    font-weight: bold;
+}
+
+/*~~~~~~~~~~~~~~~Pre-Loader~~~~~~~~~~~~~~~~~*/
+.pre-loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.96);
+}
+
+.spinner-position {
+    width: 100%;
+    height: 100%;
+    /*padding: 40vh 0 0 38vw;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.lds-dual-ring {
+    position: absolute;
+    content: " ";
+    display: block;
+    width: 25vh;
+    height: 25vh;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    border-color: transparent #fff transparent #fff;
+    animation: lds-dual-ring 4s linear infinite;
+}
+
+.lds-dual-ring-small {
+    position: absolute;
+    content: " ";
+    display: block;
+    height: 20vh;
+    width: 20vh;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    border-color: var(--blue) transparent var(--blue) transparent;
+    animation: lds-dual-ring-small 2s linear infinite;
+
+}
+
+@keyframes lds-dual-ring {
+    0% {
+        opacity: 0.20;
+        transform: rotate(0deg);
+    }
+    50% {
+        opacity: 1;
+        transform: rotate(110deg);
     }
 
+    75% {
+        opacity: 1;
+        transform: rotate(200deg);
+    }
+    100% {
+        opacity: 0.20;
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes lds-dual-ring-small {
+    0% {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+    50% {
+        opacity: 0.20;
+        transform: rotate(110deg);
+    }
+
+    75% {
+        opacity: 0.20;
+        transform: rotate(200deg);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(360deg);
+    }
+}
+
+/*~~~~~~~~~~~~~~~Pre-Loader~~~~~~~~~~~~~~~~~*/
+
+@media (min-aspect-ratio: 6/5) {
     body {
         display: grid;
         background-color: var(--black);
         grid-template-areas: "navbar" "showcase" "about" "games" "locations" "praise" "footer";
-        grid-template-rows: [nav] 10vh [show] 75vh [about] 60vh [games] 70vh [location] 75vh [praise] 70vh [footer] 70vh;
+        grid-template-rows: [nav]10vh [show] 75vh [about] 60vh [games] 70vh [location] 75vh [praise] 70vh [footer] 70vh;
     }
 
-    a {
-        font-size: var(--navs-font-size);
-        font-weight: bold;
-    }
-
-    /*~~~~~~~~~~~~~~~Pre-Loader~~~~~~~~~~~~~~~~~*/
-    .pre-loader {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        z-index: 999;
-        background-color: rgba(0, 0, 0, 0.96);
-    }
-
-    .spinner-position {
-        width: 100%;
-        height: 100%;
-        /*padding: 40vh 0 0 38vw;*/
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-    }
-
-    .lds-dual-ring {
-        position: absolute;
-        content: " ";
-        display: block;
-        width: 25vh;
-        height: 25vh;
-        border-radius: 50%;
-        border: 5px solid #fff;
-        border-color: transparent #fff transparent #fff;
-        animation: lds-dual-ring 4s linear infinite;
-    }
-
-    .lds-dual-ring-small {
-        position: absolute;
-        content: " ";
-        display: block;
-        height: 20vh;
-        width: 20vh;
-        border-radius: 50%;
-        border: 5px solid #fff;
-        border-color: var(--blue) transparent var(--blue) transparent;
-        animation: lds-dual-ring-small 2s linear infinite;
-
-    }
-
-    @keyframes lds-dual-ring {
-        0% {
-            opacity: 0.20;
-            transform: rotate(0deg);
-        }
-        50% {
-            opacity: 1;
-            transform: rotate(110deg);
-        }
-
-        75% {
-            opacity: 1;
-            transform: rotate(200deg);
-        }
-        100% {
-            opacity: 0.20;
-            transform: rotate(360deg);
-        }
-    }
-
-    @keyframes lds-dual-ring-small {
-        0% {
-            opacity: 1;
-            transform: rotate(0deg);
-        }
-        50% {
-            opacity: 0.20;
-            transform: rotate(110deg);
-        }
-
-        75% {
-            opacity: 0.20;
-            transform: rotate(200deg);
-        }
-        100% {
-            opacity: 1;
-            transform: rotate(360deg);
-        }
-    }
-
-    /*~~~~~~~~~~~~~~~Pre-Loader~~~~~~~~~~~~~~~~~*/
     /*~~~~~~~~~~~~~~~NavBar~~~~~~~~~~~~~~~~~*/
     #mynav {
         grid-area: navbar;
@@ -199,7 +200,7 @@ a:hover {
     }
 
     .navbar {
-        height: 10vh;
+        height: 100%;
         display: grid;
         grid-template-areas: ".. logo .. navpills ..";
         grid-template-columns: 15vw 20vw 2vw 50vw 8vw;
@@ -359,6 +360,7 @@ a:hover {
         filter: grayscale(100%);
 
     }
+
     .game-desc {
         padding-left: 1vw;
         height: min-content;
@@ -458,18 +460,21 @@ a:hover {
         text-align: center;
         grid-area: content;
     }
-    .praise-logo-holder{
+
+    .praise-logo-holder {
         grid-area: logos;
         display: grid;
         grid-template-rows: 100%;
-        grid-template-columns: repeat(5,1fr);
+        grid-template-columns: repeat(5, 1fr);
         grid-gap: 2vw;
 
     }
-    .praise-logos{
+
+    .praise-logos {
         align-self: center;
         width: 100%;
     }
+
     /*~~~~~~~~~~~~~~~Praise~~~~~~~~~~~~~~~~~*/
     /*!*~~~~~~~~~~~~~~~Users~~~~~~~~~~~~~~~~~*!*/
     /*.user-div {*/
@@ -501,17 +506,26 @@ a:hover {
 
     .logo-holder {
         grid-area: logo;
-        padding: 4vh 2vw 4vh 2vw;
+        padding-right: 2vw;
         border-right: 2px white solid;
-        display: grid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    .footer-logo {
-        padding-left: 1vw;
+    .logo-holder h1 {
+        font-family: var(--content-font);
+        font-weight: bolder;
+        word-wrap: break-spaces;
+        width: min-content;
+    }
+
+    .logo-holder img {
         align-self: center;
         width: 13vw;
     }
-    .link-holder{
+
+    .link-holder {
         height: 100%;
         grid-area: links;
         display: grid;
@@ -519,45 +533,421 @@ a:hover {
         grid-template-rows: 50% 50%;
         grid-template-columns: 50% 50%;
     }
-    .foot-social{
+
+    .foot-social {
         grid-area: social;
     }
-    .foot-policy{
+
+    .foot-policy {
         grid-area: policy;
     }
-    .foot-support{
+
+    .foot-support {
         grid-area: support;
     }
-    .foot-contact{
+
+    .foot-contact {
         grid-area: contact;
     }
 
-    .foot-sections{
+    .foot-sections {
         padding: 1vh 0 0 2vw;
     }
-    .foot-sections h3{
+
+    .foot-sections h3 {
         color: var(--blue);
         font-size: 3vh;
     }
-    .foot-sections ul{
+
+    .foot-sections ul {
         list-style-type: none;
         padding: 0 0 0 1vh;
         margin: 0;
     }
-    .foot-sections ul li{
+
+    .foot-sections ul li {
         padding-top: 0.8vh;
     }
-    .foot-sections ul li a{
+
+    .foot-sections ul li a {
         color: var(--white);
         font-size: 2vh;
         font-family: Ubuntu;
     }
-
 
     /*~~~~~~~~~~~~~~~Footer~~~~~~~~~~~~~~~~~*/
 
 }
 
 @media (max-aspect-ratio: 6/5) {
+    body {
+        display: grid;
+        background-color: var(--black);
+        grid-template-areas: "navbar" "showcase" "about" "games" "locations" "praise" "footer";
+        grid-template-rows: [nav] 7vh [show] 18vh [about] 25vh [games] 22vh [location] 28vh [praise] 22vh [footer] 30vh;
+    }
 
+    /*~~~~~~~~~~~~~~~NavBar~~~~~~~~~~~~~~~~~*/
+    #mynav {
+        grid-area: navbar;
+        opacity: 0;
+        transition: all 0.8s ease-in-out;
+    }
+
+    .navbar {
+        height: 100%;
+        display: grid;
+        grid-template-areas: ".. logo .. navpills ..";
+        grid-template-columns: 10vw 20vw 2vw 50vw 8vw;
+        grid-template-rows: minmax(7vh, 10vh);
+        transition: all 0.8s ease-in-out;
+    }
+
+    .navbar-brand {
+        grid-area: logo;
+    }
+
+    .navbar button {
+        grid-area: navpills;
+    }
+
+    .logo {
+        padding-top: 5vh;
+        width: 9vh;
+        transition: all 0.6s ease-in-out;
+    }
+
+    .nav-pill-holder {
+        /*grid-area: navpills;*/
+        /*position: absolute;*/
+    }
+
+    .nav-item {
+        padding-left: 2vw;
+    }
+
+    .navbar-min {
+        height: 5vh;
+    }
+
+    .logo-min {
+        margin: 0;
+        padding: 0;
+        transform: scale(0.37);
+    }
+
+    /*~~~~~~~~~~~~~~~NavBar~~~~~~~~~~~~~~~~~*/
+    /*~~~~~~~~~~~~~~~ShowCase~~~~~~~~~~~~~~~~~*/
+    .showcase-div {
+        grid-area: showcase;
+        overflow: hidden;
+    }
+
+    .show-img-holder {
+        z-index: -1;
+        position: absolute;
+        overflow: hidden;
+    }
+
+    .show-cards {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.7);
+        margin: 6vh 70vw 6vh 10vw;
+        padding: 2vh 1vh 1vh 1vh;
+        border-radius: 5%;
+    }
+
+    .show-card-content {
+        font-family: var(--content-font);
+        color: var(--white);
+        font-size: var(--sub-content-font-size);
+    }
+
+    /*~~~~~~~~~~~~~~~Showcase~~~~~~~~~~~~~~~~~*/
+    /*~~~~~~~~~~~~~~~About~~~~~~~~~~~~~~~~~*/
+    .about-div {
+        grid-area: about;
+        padding: 4vh 2vh 2vh 2vh;
+    }
+
+    .about-holder {
+        display: grid;
+        grid-template-areas: "heading heading heading" "content content content" "card1 card2 card3";
+        grid-template-rows: min-content 5vh 10vh;
+        grid-template-columns: repeat(3, 33.3%);
+        height: 100%;
+    }
+
+    .about-head {
+        grid-area: heading;
+        text-align: center;
+    }
+
+    .about-img {
+        grid-area: img;
+
+    }
+
+    .about-content {
+        text-align: center;
+        grid-area: content;
+    }
+
+    .about-card {
+        padding: 1vh 1vh 1vh 1vh;
+
+    }
+
+    .card1 {
+        grid-area: card1;
+    }
+
+    .card2 {
+        grid-area: card2;
+        border-left: 1px solid white;
+        border-right: 1px solid white;
+    }
+
+    .card3 {
+        grid-area: card3;
+    }
+
+    .about-card-content {
+        padding-top: 2.5vh;
+        font-size: var(--sub-content-font-size);
+        font-family: var(--content-font);
+        color: var(--white);
+    }
+
+    /*~~~~~~~~~~~~~~~About~~~~~~~~~~~~~~~~~*/
+    /*~~~~~~~~~~~~~~~Games~~~~~~~~~~~~~~~~~*/
+    .games-div {
+        grid-area: games;
+        padding: 2vh 2vh 2vh 2vh;
+        background-color: var(--gray-1);
+        overflow: hidden;
+    }
+
+    .games-holder {
+        display: grid;
+        grid-template-areas: "heading" 'images';
+        grid-template-rows: min-content 15vh;
+    }
+
+    .games-head {
+        grid-area: heading;
+        text-align: center;
+        color: black;
+        padding-bottom: 1vh;
+    }
+
+    .game-title-holder {
+        grid-area: images;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .game-title {
+        position: relative;
+        background: no-repeat center center;
+        background-size: cover;
+        transition: all 0.15s ease-in-out;
+    }
+
+    .game-title:hover {
+        z-index: 9;
+        transform: scale(1.2);
+        filter: grayscale(100%);
+
+    }
+
+    .game-desc {
+        padding-left: 1vw;
+        height: min-content;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.4);
+        transition: all 0.1s ease;
+    }
+
+    .game-title .game-desc {
+        /*visibility: hidden;*/
+    }
+
+    .game-title:hover .game-desc {
+        visibility: visible;
+    }
+
+    /*~~~~~~~~~~~~~~~Games~~~~~~~~~~~~~~~~~*/
+    /*~~~~~~~~~~~~~~~Location~~~~~~~~~~~~~~~~~*/
+    .location-div {
+        grid-area: locations;
+        background-color: var(--black);
+        padding: 2vh;
+    }
+
+    .loc-holder {
+        display: grid;
+        grid-template-areas: "head" "map";
+        grid-template-rows: min-content min-content;
+    }
+
+    .loc-head {
+        width: 100%;
+        text-align: center;
+    }
+
+    .loc-map {
+        grid-area: map;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .map {
+        position: relative;
+    }
+
+    .mapTooltip {
+        position: absolute;
+        background-color: #474c4b;
+        moz-opacity: 0.70;
+        opacity: 0.70;
+        filter: alpha(opacity=70);
+        border-radius: 10px;
+        padding: 10px;
+        z-index: 1000;
+        max-width: 200px;
+        display: none;
+        color: #fff;
+    }
+
+    /*~~~~~~~~~~~~~~~Location~~~~~~~~~~~~~~~~~*/
+    /*~~~~~~~~~~~~~~~Praise~~~~~~~~~~~~~~~~~*/
+    .praise-div {
+        grid-area: praise;
+        padding: 2vh;
+        position: relative;
+        overflow: hidden;
+        /*background:linear-gradient(90deg,var(--purple),var(--blue));*/
+        background-color: var(--gray-1);
+    }
+
+    .praise-holder {
+        display: grid;
+        grid-template-areas: "heading" "content" "logos";
+        grid-template-rows: min-content min-content min-content;
+        height: 100%;
+    }
+
+    .praise-head {
+        grid-area: heading;
+        text-align: center;
+    }
+
+    .praise-content {
+        text-align: center;
+        grid-area: content;
+    }
+
+    .praise-logo-holder {
+        grid-area: logos;
+        display: grid;
+        grid-template-rows: 100%;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 2vw;
+
+    }
+
+    .praise-logos {
+        align-self: center;
+        width: 100%;
+    }
+
+    /*~~~~~~~~~~~~~~~Praise~~~~~~~~~~~~~~~~~*/
+    /*~~~~~~~~~~~~~~~Footer~~~~~~~~~~~~~~~~~*/
+    .footer-div {
+        grid-area: footer;
+        padding: 6vh 10vw 4vh 10vw;
+        height: 100%;
+        background-color: var(--black);
+    }
+
+    .footer-holder {
+        height: 100%;
+        padding: 1vh 1vw 1vh 1vw;
+        border-top: 1px solid var(--white);
+        border-bottom: 1px solid var(--white);
+        display: grid;
+        grid-template-areas: "logo links links";
+        grid-template-rows: 100%;
+        grid-template-columns: 1fr 0.5fr 0.5fr;
+    }
+
+    .logo-holder {
+        grid-area: logo;
+        /*padding: 10% 0 0 10%;*/
+        border-right: 2px white solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo-holder h1 {
+        font-family: var(--content-font);
+        font-weight: bolder;
+        word-wrap: break-spaces;
+        width: min-content;
+    }
+
+    .logo-holder img {
+        padding-left: 1vw;
+        width: 13vw;
+    }
+
+    .link-holder {
+        height: 100%;
+        grid-area: links;
+        display: grid;
+        grid-template-areas: "social policy" "support contact";
+        grid-template-rows: 50% 50%;
+        grid-template-columns: 50% 50%;
+    }
+
+    .foot-social {
+        grid-area: social;
+    }
+
+    .foot-policy {
+        grid-area: policy;
+    }
+
+    .foot-support {
+        grid-area: support;
+    }
+
+    .foot-contact {
+        grid-area: contact;
+    }
+
+    .foot-sections {
+        padding: 1vh 0 0 2vw;
+    }
+
+    .foot-sections h3 {
+        color: var(--blue);
+    }
+
+    .foot-sections ul {
+        list-style-type: none;
+        padding: 0 0 0 1vh;
+        margin: 0;
+    }
+
+    .foot-sections ul li a {
+        color: var(--white);
+        font-family: Ubuntu;
+    }
+
+    /*~~~~~~~~~~~~~~~Footer~~~~~~~~~~~~~~~~~*/
 }
