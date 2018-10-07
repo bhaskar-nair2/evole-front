@@ -189,6 +189,229 @@ a {
 }
 
 /*~~~~~~~~~~~~~~~Pre-Loader~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~About~~~~~~~~~~~~~~~~~*/
+.about-head {
+    grid-area: heading;
+    text-align: center;
+}
+
+.about-img {
+    grid-area: img;
+
+}
+
+.about-content {
+    text-align: center;
+    grid-area: content;
+}
+
+.about-card {
+    padding: 1vh 1vh 1vh 1vh;
+
+}
+
+.card1 {
+    grid-area: card1;
+}
+
+.card2 {
+    grid-area: card2;
+    border-left: 1px solid var(--decorations-1);
+    border-right: 1px solid var(--decorations-1);
+}
+
+.card3 {
+    grid-area: card3;
+}
+
+.about-card-content {
+    padding-top: 2.5vh;
+    font-size: var(--sub-content-font-size);
+    font-family: var(--content-font);
+}
+
+/*~~~~~~~~~~~~~~~About~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~Games~~~~~~~~~~~~~~~~~*/
+.games-head {
+    grid-area: heading;
+    text-align: center;
+    color: black;
+}
+
+.game-title-holder {
+    grid-area: images;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.game-title {
+    position: relative;
+    background: no-repeat center center;
+    background-size: cover;
+    transition: all 0.15s ease-in-out;
+
+}
+
+.game-title:hover {
+    z-index: 9;
+    transform: scale(1.2);
+    filter: grayscale(100%);
+
+}
+
+.game-desc {
+    padding-left: 1vw;
+    height: min-content;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    transition: all 0.1s ease;
+}
+
+.game-desc h3 {
+    color: var(--white);
+}
+
+.game-desc p {
+    font-family: var(--content-font);
+    color: var(--white);
+    font-size: var(--sub-content-font-size);
+}
+
+.game-title .game-desc {
+    visibility: hidden;
+}
+
+.game-title:hover .game-desc {
+    visibility: visible;
+}
+
+/*~~~~~~~~~~~~~~~Games~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~Location~~~~~~~~~~~~~~~~~*/
+
+.loc-head {
+    width: 100%;
+    text-align: center;
+}
+
+.loc-map {
+    grid-area: map;
+    position: relative;
+    overflow: hidden;
+}
+
+.map {
+    position: relative;
+}
+
+.mapTooltip {
+    position: absolute;
+    background-color: #474c4b;
+    moz-opacity: 0.70;
+    opacity: 0.70;
+    filter: alpha(opacity=70);
+    border-radius: 10px;
+    padding: 10px;
+    z-index: 1000;
+    max-width: 200px;
+    display: none;
+    color: #fff;
+}
+
+/*~~~~~~~~~~~~~~~Location~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~Praise~~~~~~~~~~~~~~~~~*/
+.praise-head {
+    grid-area: heading;
+    text-align: center;
+}
+
+.praise-content {
+    text-align: center;
+    grid-area: content;
+}
+
+.praise-logo-holder {
+    grid-area: logos;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 2vw;
+
+}
+
+.praise-logos {
+    align-self: center;
+    width: 100%;
+}
+
+/*~~~~~~~~~~~~~~~Praise~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~Footer~~~~~~~~~~~~~~~~~*/
+.logo-holder {
+    grid-area: logo;
+    grid-column: 2;
+    border-right: 2px white solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buy {
+    grid-area: button;
+    grid-column: 2;
+    text-align: center;
+}
+
+.buyBut {
+    width: min-content;
+    border-radius: 15px;
+    color: white;
+    box-shadow: 1px 1px 20px gray;
+    background-color: var(--decorations-1);
+}
+
+.buyBut:hover {
+    box-shadow: 1px 1px 30px black;
+}
+
+.logo-holder h1 {
+    font-family: var(--content-font);
+    font-weight: bolder;
+}
+
+.foot-social {
+    grid-area: social;
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+
+}
+
+.foot-policy {
+    grid-area: policy;
+    grid-column: 2;
+    display: grid;
+    margin: 0 5vw 0 5vw;
+    grid-template-columns: repeat(3, auto);
+}
+
+.foot-sections {
+    text-align: center;
+}
+
+.foot-sections a {
+    color: var(--font-color-3);
+    text-align: center;
+    font-size: var(--sub-sub-content-font-size);
+}
+
+.foot-sections i {
+    list-style-type: none;
+    padding: 0 0 0 1vh;
+    margin: 0;
+}
+
+/*~~~~~~~~~~~~~~~Footer~~~~~~~~~~~~~~~~~*/
 
 @media (min-aspect-ratio: 6/5) {
     body {
@@ -283,47 +506,6 @@ a {
         height: 100%;
     }
 
-    .about-head {
-        grid-area: heading;
-        text-align: center;
-    }
-
-    .about-img {
-        grid-area: img;
-
-    }
-
-    .about-content {
-        text-align: center;
-        grid-area: content;
-    }
-
-    .about-card {
-        padding: 3vh 5vh 5vh 5vh;
-
-    }
-
-    .card1 {
-        grid-area: card1;
-    }
-
-    .card2 {
-        grid-area: card2;
-        border-left: 1px solid var(--decorations-1);
-        border-right: 1px solid var(--decorations-1);
-    }
-
-    .card3 {
-        grid-area: card3;
-    }
-
-    .about-card-content {
-        padding-top: 2.5vh;
-        font-size: var(--sub-content-font-size);
-        font-family: var(--content-font);
-    }
-
-    /*~~~~~~~~~~~~~~~About~~~~~~~~~~~~~~~~~*/
     /*~~~~~~~~~~~~~~~Games~~~~~~~~~~~~~~~~~*/
     .games-div {
         grid-area: games;
@@ -338,62 +520,6 @@ a {
         grid-template-rows: min-content 4vh 40vh;
     }
 
-    .games-head {
-        grid-area: heading;
-        text-align: center;
-        color: black;
-    }
-
-    .game-title-holder {
-        grid-area: images;
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-    }
-
-    .game-title {
-        position: relative;
-        background: no-repeat center center;
-        background-size: cover;
-        transition: all 0.15s ease-in-out;
-
-    }
-
-    .game-title:hover {
-        z-index: 9;
-        transform: scale(1.2);
-        filter: grayscale(100%);
-
-    }
-
-    .game-desc {
-        padding-left: 1vw;
-        height: min-content;
-        width: 100%;
-        position: absolute;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.4);
-        transition: all 0.1s ease;
-    }
-
-    .game-desc h3 {
-        color: var(--white);
-    }
-
-    .game-desc p {
-        font-family: var(--content-font);
-        color: var(--white);
-        font-size: var(--sub-content-font-size);
-    }
-
-    .game-title .game-desc {
-        visibility: hidden;
-    }
-
-    .game-title:hover .game-desc {
-        visibility: visible;
-    }
-
-    /*~~~~~~~~~~~~~~~Games~~~~~~~~~~~~~~~~~*/
     /*~~~~~~~~~~~~~~~Location~~~~~~~~~~~~~~~~~*/
     .location-div {
         grid-area: locations;
@@ -407,36 +533,6 @@ a {
         grid-template-rows: 10vh 65vh;
     }
 
-    .loc-head {
-        width: 100%;
-        text-align: center;
-    }
-
-    .loc-map {
-        grid-area: map;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .map {
-        position: relative;
-    }
-
-    .mapTooltip {
-        position: absolute;
-        background-color: #474c4b;
-        moz-opacity: 0.70;
-        opacity: 0.70;
-        filter: alpha(opacity=70);
-        border-radius: 10px;
-        padding: 10px;
-        z-index: 1000;
-        max-width: 200px;
-        display: none;
-        color: #fff;
-    }
-
-    /*~~~~~~~~~~~~~~~Location~~~~~~~~~~~~~~~~~*/
     /*~~~~~~~~~~~~~~~Praise~~~~~~~~~~~~~~~~~*/
     .praise-div {
         grid-area: praise;
@@ -447,17 +543,6 @@ a {
         background-color: var(--gray-1);
     }
 
-    /*.praise-div::before {*/
-    /*content: "";*/
-    /*width: 1440px;*/
-    /*height: 470px;*/
-    /*background: linear-gradient(90deg, var(--gray-1), var(--black));*/
-    /*position: absolute;*/
-    /*bottom: -30vh;*/
-    /*right: 60vh;*/
-    /*-webkit-transform: skewY(30deg);*/
-    /*transform: skewY(30deg);*/
-    /*}*/
     .praise-holder {
         display: grid;
         grid-template-areas: "heading" ".." "content" "logos";
@@ -465,40 +550,6 @@ a {
         height: 100%;
     }
 
-    .praise-head {
-        grid-area: heading;
-        text-align: center;
-    }
-
-    .praise-content {
-        text-align: center;
-        grid-area: content;
-    }
-
-    .praise-logo-holder {
-        grid-area: logos;
-        display: grid;
-        grid-template-rows: 100%;
-        grid-template-columns: repeat(5, 1fr);
-        grid-gap: 2vw;
-
-    }
-
-    .praise-logos {
-        align-self: center;
-        width: 100%;
-    }
-
-    /*~~~~~~~~~~~~~~~Praise~~~~~~~~~~~~~~~~~*/
-    /*!*~~~~~~~~~~~~~~~Users~~~~~~~~~~~~~~~~~*!*/
-    /*.user-div {*/
-    /*grid-area: users;*/
-    /*background-color: white;*/
-    /*padding: 5vh;*/
-    /*}*/
-    /*.user-holder {*/
-    /*}*/
-    /*!*~~~~~~~~~~~~~~~Users~~~~~~~~~~~~~~~~~*!*/
     /*~~~~~~~~~~~~~~~Footer~~~~~~~~~~~~~~~~~*/
     .footer-div {
         grid-area: footer;
@@ -515,68 +566,6 @@ a {
         grid-template-columns: 30% 40% 30%;
         grid-template-rows: 12vh 10vh 6vh 8vh 6vh;
     }
-
-    .logo-holder {
-        grid-area: logo;
-        grid-column: 2;
-        border-right: 2px white solid;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .buy{
-        grid-area: button;
-        grid-column: 2;
-        text-align: center;
-    }
-    .buyBut{
-        width: min-content;
-        border-radius: 15px;
-        color: white;
-        box-shadow: 1px 1px 20px gray;
-        background-color: var(--decorations-1);
-    }
-    .buyBut:hover{
-        box-shadow: 1px 1px 30px black;
-    }
-    .logo-holder h1 {
-        font-family: var(--content-font);
-        font-weight: bolder;
-    }
-
-    .foot-social {
-        grid-area: social;
-        grid-column: 2;
-        display: grid;
-        grid-template-columns: repeat(5 , auto);
-
-    }
-
-    .foot-policy {
-        grid-area: policy;
-        grid-column: 2;
-        display: grid;margin: 0 5vw 0 5vw;
-        grid-template-columns: repeat(3, auto);
-    }
-
-    .foot-sections {
-        text-align: center;
-    }
-
-    .foot-sections a {
-        color: var(--font-color-3);
-        text-align: center;
-        font-size: var(--sub-sub-content-font-size);
-    }
-
-    .foot-sections i {
-        list-style-type: none;
-        padding: 0 0 0 1vh;
-        margin: 0;
-    }
-
-    /*~~~~~~~~~~~~~~~Footer~~~~~~~~~~~~~~~~~*/
 
 }
 
@@ -679,47 +668,6 @@ a {
         height: 100%;
     }
 
-    .about-head {
-        grid-area: heading;
-        text-align: center;
-    }
-
-    .about-img {
-        grid-area: img;
-
-    }
-
-    .about-content {
-        text-align: center;
-        grid-area: content;
-    }
-
-    .about-card {
-        padding: 1vh 1vh 1vh 1vh;
-
-    }
-
-    .card1 {
-        grid-area: card1;
-    }
-
-    .card2 {
-        grid-area: card2;
-        border-left: 1px solid var(--decorations-1);
-        border-right: 1px solid var(--decorations-1);
-    }
-
-    .card3 {
-        grid-area: card3;
-    }
-
-    .about-card-content {
-        padding-top: 2.5vh;
-        font-size: var(--sub-content-font-size);
-        font-family: var(--content-font);
-    }
-
-    /*~~~~~~~~~~~~~~~About~~~~~~~~~~~~~~~~~*/
     /*~~~~~~~~~~~~~~~Games~~~~~~~~~~~~~~~~~*/
     .games-div {
         grid-area: games;
@@ -734,52 +682,14 @@ a {
         grid-template-rows: min-content 15vh;
     }
 
-    .games-head {
-        grid-area: heading;
-        text-align: center;
-        color: black;
-        padding-bottom: 1vh;
-    }
-
-    .game-title-holder {
-        grid-area: images;
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-    }
-
-    .game-title {
-        position: relative;
-        background: no-repeat center center;
-        background-size: cover;
-        transition: all 0.15s ease-in-out;
-    }
-
-    .game-title:hover {
-        z-index: 9;
-        transform: scale(1.2);
-        filter: grayscale(100%);
-
-    }
-
-    .game-desc {
-        padding-left: 1vw;
-        height: min-content;
-        width: 100%;
-        position: absolute;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.4);
-        transition: all 0.1s ease;
-    }
-
     .game-title .game-desc {
-        /*visibility: hidden;*/
+        visibility: visible;
     }
 
     .game-title:hover .game-desc {
         visibility: visible;
     }
 
-    /*~~~~~~~~~~~~~~~Games~~~~~~~~~~~~~~~~~*/
     /*~~~~~~~~~~~~~~~Location~~~~~~~~~~~~~~~~~*/
     .location-div {
         grid-area: locations;
@@ -793,36 +703,6 @@ a {
         grid-template-rows: min-content min-content;
     }
 
-    .loc-head {
-        width: 100%;
-        text-align: center;
-    }
-
-    .loc-map {
-        grid-area: map;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .map {
-        position: relative;
-    }
-
-    .mapTooltip {
-        position: absolute;
-        background-color: #474c4b;
-        moz-opacity: 0.70;
-        opacity: 0.70;
-        filter: alpha(opacity=70);
-        border-radius: 10px;
-        padding: 10px;
-        z-index: 1000;
-        max-width: 200px;
-        display: none;
-        color: #fff;
-    }
-
-    /*~~~~~~~~~~~~~~~Location~~~~~~~~~~~~~~~~~*/
     /*~~~~~~~~~~~~~~~Praise~~~~~~~~~~~~~~~~~*/
     .praise-div {
         grid-area: praise;
@@ -840,30 +720,6 @@ a {
         height: 100%;
     }
 
-    .praise-head {
-        grid-area: heading;
-        text-align: center;
-    }
-
-    .praise-content {
-        text-align: center;
-        grid-area: content;
-    }
-
-    .praise-logo-holder {
-        grid-area: logos;
-        display: grid;
-        grid-template-rows: 100%;
-        grid-template-columns: repeat(5, 1fr);
-        grid-gap: 2vw;
-
-    }
-
-    .praise-logos {
-        align-self: center;
-        width: 100%;
-    }
-
     /*~~~~~~~~~~~~~~~Praise~~~~~~~~~~~~~~~~~*/
     /*~~~~~~~~~~~~~~~Footer~~~~~~~~~~~~~~~~~*/
     .footer-div {
@@ -874,79 +730,12 @@ a {
     }
 
     .footer-holder {
+        text-align: center;
         height: 100%;
-        padding: 1vh 1vw 1vh 1vw;
-        border-top: 1px solid var(--white);
-        border-bottom: 1px solid var(--white);
         display: grid;
-        grid-template-areas: "logo links links";
-        grid-template-rows: 100%;
-        grid-template-columns: 1fr 0.5fr 0.5fr;
-    }
-
-    .logo-holder {
-        grid-area: logo;
-        /*padding: 10% 0 0 10%;*/
-        border-right: 2px white solid;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .logo-holder h1 {
-        font-family: var(--content-font);
-        font-weight: bolder;
-        word-wrap: break-spaces;
-        width: min-content;
-    }
-
-    .logo-holder img {
-        padding-left: 1vw;
-        width: 13vw;
-    }
-
-    .link-holder {
-        height: 100%;
-        grid-area: links;
-        display: grid;
-        grid-template-areas: "social policy" "support contact";
-        grid-template-rows: 50% 50%;
-        grid-template-columns: 50% 50%;
-    }
-
-    .foot-social {
-        grid-area: social;
-    }
-
-    .foot-policy {
-        grid-area: policy;
-    }
-
-    .foot-support {
-        grid-area: support;
-    }
-
-    .foot-contact {
-        grid-area: contact;
-    }
-
-    .foot-sections {
-        padding: 1vh 0 0 2vw;
-    }
-
-    .foot-sections h3 {
-        color: var(--blue);
-    }
-
-    .foot-sections ul {
-        list-style-type: none;
-        padding: 0 0 0 1vh;
-        margin: 0;
-    }
-
-    .foot-sections ul li a {
-        color: var(--white);
-        font-family: Ubuntu;
+        grid-template-areas: "logo" "button" ".." "social" "policy";
+        grid-template-columns: 30% 40% 30%;
+        grid-template-rows: 12vh 10vh 6vh 8vh 6vh;
     }
 
     /*~~~~~~~~~~~~~~~Footer~~~~~~~~~~~~~~~~~*/
