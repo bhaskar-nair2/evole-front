@@ -15,7 +15,7 @@ $(document).on('scroll', function (event) {
     let wh = $(window).height();
     let scroll = $(document).scrollTop() / (dh - wh) * 10000;
     console.log(scroll);
-    let min_nav = 1500;
+    let min_nav = 150;
 
     if (scroll >= min_nav) {
         $('.navbar').addClass('navbar-min');

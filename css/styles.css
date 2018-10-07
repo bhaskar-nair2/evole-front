@@ -1,6 +1,6 @@
 @font-face {
     font-family: EVVA;
-    src: url("../fonts/EVAA.ttf");
+    src: url("../fonts/Ubuntu-R.ttf");
     /*src: local(Ubuntu);*/
 }
 
@@ -25,10 +25,14 @@ html {
     --sub-content-font-size: 1.2vw;
     --font-weight-reg: 400;
     --font-weight-bold: 600;
-    --black: #000;
-    --gray-1: #191a1c;
+    --font-color-1: #000;
+    --font-color-2: #000;
+    --font-color-3: #000;
+    --font-color-4: #00acff;
+    --decorations-1: #4c4f54;
+    --black: #ffffff;
+    --gray-1: #ebf4ff;
     --gray-2: #323538;
-    --gray-3: #4c4f54;
     --gray-4: #656a70;
     --gray-5: #7f858d;
     --gray-6: #9a9ea5;
@@ -55,42 +59,43 @@ html {
 }
 
 .navbar {
-    background-color: rgba(0, 0, 0, 0.80);
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 0;
     margin: 0;
     border-bottom: white 0.02vw solid;
+    box-shadow: 1px 1px 20px black;
 }
 
 a, h1, h2 {
     font-family: var(--title-font);
-    color: var(--white);
+    color: var(--font-color-1);
 }
 
 h3, h4, h5 {
     font-family: var(--content-font);
     font-weight: bolder;
-    color: var(--white);
+    color: var(--font-color-1);
 }
 
 a:hover {
-    color: var(--purple);
+    color: var(--font-color-3);
 }
 
 .content {
     font-family: var(--content-font);
-    color: var(--white);
+    color: var(--font-color-2);
     font-size: var(--content-font-size);
 }
 
 .special {
-    color: var(--blue) !important;
+    color: var(--font-color-4) !important;
     font-weight: bold;
     filter: grayscale(0%);
 }
 
 .special2 {
     /*border-bottom: solid 0.2em var(--purple);*/
-    font-weight: bolder;
+    font-weight: bold;
 }
 
 a {
@@ -187,9 +192,8 @@ a {
 @media (min-aspect-ratio: 6/5) {
     body {
         display: grid;
-        background-color: var(--black);
         grid-template-areas: "navbar" "showcase" "about" "games" "locations" "praise" "footer";
-        grid-template-rows: [nav]10vh [show] 75vh [about] 60vh [games] 70vh [location] 75vh [praise] 70vh [footer] 70vh;
+        grid-template-rows: [nav] 10vh [show] 75vh [about] 60vh [games] 60vh [location] 75vh [praise] 70vh [footer] 50vh;
     }
 
     /*~~~~~~~~~~~~~~~NavBar~~~~~~~~~~~~~~~~~*/
@@ -202,8 +206,8 @@ a {
     .navbar {
         height: 100%;
         display: grid;
-        grid-template-areas: ".. logo .. navpills ..";
-        grid-template-columns: 15vw 20vw 2vw 50vw 8vw;
+        grid-template-areas: ".. logo .. navpills";
+        grid-template-columns: 15vw 20vw 20vw 40vw;
         grid-template-rows: minmax(7vh, 10vh);
         transition: all 0.8s ease-in-out;
     }
@@ -304,8 +308,8 @@ a {
 
     .card2 {
         grid-area: card2;
-        border-left: 1px solid white;
-        border-right: 1px solid white;
+        border-left: 1px solid var(--decorations-1);
+        border-right: 1px solid var(--decorations-1);
     }
 
     .card3 {
@@ -316,7 +320,6 @@ a {
         padding-top: 2.5vh;
         font-size: var(--sub-content-font-size);
         font-family: var(--content-font);
-        color: var(--white);
     }
 
     /*~~~~~~~~~~~~~~~About~~~~~~~~~~~~~~~~~*/
@@ -331,7 +334,7 @@ a {
     .games-holder {
         display: grid;
         grid-template-areas: "heading" ".." 'images';
-        grid-template-rows: min-content 4vh 50vh;
+        grid-template-rows: min-content 4vh 40vh;
     }
 
     .games-head {
@@ -371,6 +374,15 @@ a {
         transition: all 0.1s ease;
     }
 
+    .game-desc h3 {
+        color: var(--white);
+    }
+
+    .game-desc p{
+        font-family: var(--content-font);
+        color: var(--white);
+        font-size: var(--sub-content-font-size);
+    }
     .game-title .game-desc {
         visibility: hidden;
     }
@@ -488,7 +500,7 @@ a {
     /*~~~~~~~~~~~~~~~Footer~~~~~~~~~~~~~~~~~*/
     .footer-div {
         grid-area: footer;
-        padding: 12vh 15vw 8vh 15vw;
+        /*padding: 12vh 15vw 8vh 15vw;*/
         height: 100%;
         background-color: var(--black);
     }
@@ -570,7 +582,6 @@ a {
     }
 
     .foot-sections ul li a {
-        color: var(--white);
         font-size: 2vh;
         font-family: Ubuntu;
     }
@@ -704,8 +715,8 @@ a {
 
     .card2 {
         grid-area: card2;
-        border-left: 1px solid white;
-        border-right: 1px solid white;
+        border-left: 1px solid var(--decorations-1);
+        border-right: 1px solid var(--decorations-1);
     }
 
     .card3 {
@@ -716,7 +727,6 @@ a {
         padding-top: 2.5vh;
         font-size: var(--sub-content-font-size);
         font-family: var(--content-font);
-        color: var(--white);
     }
 
     /*~~~~~~~~~~~~~~~About~~~~~~~~~~~~~~~~~*/
