@@ -23,11 +23,12 @@ html {
     --navs-font-size: 1.3vw;
     --content-font-size: 1.5vw;
     --sub-content-font-size: 1.2vw;
+    --sub-sub-content-font-size: 0.8vw;
     --font-weight-reg: 400;
     --font-weight-bold: 600;
     --font-color-1: #000;
     --font-color-2: #000;
-    --font-color-3: #000;
+    --font-color-3: #7f858d;
     --font-color-4: #00acff;
     --decorations-1: #4c4f54;
     --black: #ffffff;
@@ -378,11 +379,12 @@ a {
         color: var(--white);
     }
 
-    .game-desc p{
+    .game-desc p {
         font-family: var(--content-font);
         color: var(--white);
         font-size: var(--sub-content-font-size);
     }
+
     .game-title .game-desc {
         visibility: hidden;
     }
@@ -500,90 +502,78 @@ a {
     /*~~~~~~~~~~~~~~~Footer~~~~~~~~~~~~~~~~~*/
     .footer-div {
         grid-area: footer;
-        /*padding: 12vh 15vw 8vh 15vw;*/
+        padding: 5vh;
         height: 100%;
         background-color: var(--black);
     }
 
     .footer-holder {
+        text-align: center;
         height: 100%;
-        padding: 5vh 10vh 5vh 10vh;
-        border-top: 1px solid var(--white);
-        border-bottom: 1px solid var(--white);
         display: grid;
-        grid-template-areas: "logo links links";
-        grid-template-rows: 100%;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "logo" "button" ".." "social" "policy";
+        grid-template-columns: 30% 40% 30%;
+        grid-template-rows: 12vh 10vh 6vh 8vh 6vh;
     }
 
     .logo-holder {
         grid-area: logo;
-        padding-right: 2vw;
+        grid-column: 2;
         border-right: 2px white solid;
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
+    .buy{
+        grid-area: button;
+        grid-column: 2;
+        text-align: center;
+    }
+    .buyBut{
+        width: min-content;
+        border-radius: 15px;
+        color: white;
+        box-shadow: 1px 1px 20px gray;
+        background-color: var(--decorations-1);
+    }
+    .buyBut:hover{
+        box-shadow: 1px 1px 30px black;
+    }
     .logo-holder h1 {
         font-family: var(--content-font);
         font-weight: bolder;
-        word-wrap: break-spaces;
-        width: min-content;
-    }
-
-    .logo-holder img {
-        align-self: center;
-        width: 13vw;
-    }
-
-    .link-holder {
-        height: 100%;
-        grid-area: links;
-        display: grid;
-        grid-template-areas: "social policy" "support contact";
-        grid-template-rows: 50% 50%;
-        grid-template-columns: 50% 50%;
     }
 
     .foot-social {
         grid-area: social;
+        grid-column: 2;
+        display: grid;
+        grid-template-columns: repeat(5 , auto);
+
     }
 
     .foot-policy {
         grid-area: policy;
-    }
-
-    .foot-support {
-        grid-area: support;
-    }
-
-    .foot-contact {
-        grid-area: contact;
+        grid-column: 2;
+        display: grid;margin: 0 5vw 0 5vw;
+        grid-template-columns: repeat(3, auto);
     }
 
     .foot-sections {
-        padding: 1vh 0 0 2vw;
+        text-align: center;
     }
 
-    .foot-sections h3 {
-        color: var(--blue);
-        font-size: 3vh;
+    .foot-sections a {
+        color: var(--font-color-3);
+        text-align: center;
+        font-size: var(--sub-sub-content-font-size);
     }
 
-    .foot-sections ul {
+    .foot-sections i {
         list-style-type: none;
         padding: 0 0 0 1vh;
         margin: 0;
-    }
-
-    .foot-sections ul li {
-        padding-top: 0.8vh;
-    }
-
-    .foot-sections ul li a {
-        font-size: 2vh;
-        font-family: Ubuntu;
     }
 
     /*~~~~~~~~~~~~~~~Footer~~~~~~~~~~~~~~~~~*/
